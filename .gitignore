@@ -7,3 +7,5 @@
 /cobertura.ser
 .DS_Store
 /target/
+.idea
+*.iml
