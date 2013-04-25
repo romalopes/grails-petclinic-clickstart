@@ -6,7 +6,7 @@ grails.project.source.level = 1.6
 grails.project.dependency.resolution = {
 
 	inherits "global"
-	log "error"
+	log "warn"
 	checksums true
 
 	repositories {
@@ -17,7 +17,9 @@ grails.project.dependency.resolution = {
 		grailsCentral()
 	}
 
-	dependencies {}
+    dependencies {
+        runtime 'mysql:mysql-connector-java:5.1.22'
+    }
 
 	plugins {
 		runtime ":hibernate:$grailsVersion"

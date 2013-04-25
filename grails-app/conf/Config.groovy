@@ -39,7 +39,10 @@ environments {
 }
 
 log4j = {
-	error 'org.codehaus.groovy.grails',
+    appenders {
+        console name:'stdout', layout:pattern(conversionPattern: '[%t] %-5p %c{2} %x - %m%n')
+    }
+	warn 'org.codehaus.groovy.grails',
 	      'org.springframework',
 	      'org.hibernate',
 	      'net.sf.ehcache.hibernate'

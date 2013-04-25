@@ -29,7 +29,30 @@ environments {
 			url = 'jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000'
 		}
 	}
+    embeddedDataSource {
+        pooled = true
+        dbCreate = 'create-drop'
+        url = "jdbc:${DATABASE_URL_GRAILS_PETCLINIC}"
+        driverClassName = "com.mysql.jdbc.Driver"
+        dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+        username = "${DATABASE_USERNAME_GRAILS_PETCLINIC}"
+        password = "${DATABASE_PASSWORD_GRAILS_PETCLINIC}"
+        properties {
+            maxActive = 20
+            maxIdle = 1
+            maxWait = 10000
+
+            removeAbandoned = true
+            removeAbandonedTimeout = 60
+            logAbandoned = true
+
+            validationQuery = "SELECT 1"
+            testOnBorrow = true
+        }
+    }
 	production {
-        jndiName = "java:comp/env/jdbc/petclinic"
+        pooled = false
+        dbCreate = 'create-drop'
+        jndiName = 'java:comp/env/jdbc/petclinic'
     }
 }
