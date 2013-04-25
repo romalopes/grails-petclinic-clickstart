@@ -29,7 +29,7 @@
     "build-with-jenkins": {
         "plugins" : ["git", "grails"],
         "template": {
-            "type": "https://raw.github.com/CloudBees-community/grails-petclinic-clickstart/master/jenkins.xml",
+            "type": "https://raw.github.com/CloudBees-community/grails-petclinic-clickstart/master/clickstart-jenkins.xml",
             "options": {
             }
         }
