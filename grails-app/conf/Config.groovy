@@ -1,3 +1,6 @@
+import org.apache.log4j.ConsoleAppender
+import org.apache.log4j.PatternLayout
+
 grails.project.groupId = appName
 grails.mime.file.extensions = true
 grails.mime.use.accept.header = false
@@ -39,9 +42,16 @@ environments {
 }
 
 log4j = {
+    def logLayoutPattern = new PatternLayout("%d [%t] %-5p %c %x - %m%n")
+
     appenders {
-        console name:'stdout', layout:pattern(conversionPattern: '[%t] %-5p %c{2} %x - %m%n')
+        new ConsoleAppender(name: "console",
+                layout: logLayoutPattern)
     }
+    root {
+        warn 'console'
+    }
+
 	warn 'org.codehaus.groovy.grails',
 	      'org.springframework',
 	      'org.hibernate',

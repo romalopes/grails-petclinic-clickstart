@@ -32,11 +32,11 @@ environments {
     embeddedDataSource {
         pooled = true
         dbCreate = 'create-drop'
-        url = "jdbc:${DATABASE_URL_GRAILS_PETCLINIC}"
+        url = "jdbc:" + System.getProperty('DATABASE_URL_GRAILS_PETCLINIC')
         driverClassName = "com.mysql.jdbc.Driver"
-        dialect = org.hibernate.dialect.MySQL5InnoDBDialect
-        username = "${DATABASE_USERNAME_GRAILS_PETCLINIC}"
-        password = "${DATABASE_PASSWORD_GRAILS_PETCLINIC}"
+        dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
+        username = System.getProperty('DATABASE_USERNAME_GRAILS_PETCLINIC')
+        password = System.getProperty('DATABASE_PASSWORD_GRAILS_PETCLINIC')
         properties {
             maxActive = 20
             maxIdle = 1
@@ -49,10 +49,17 @@ environments {
             validationQuery = "SELECT 1"
             testOnBorrow = true
         }
+
+        println(">> datasource.url: $url")
+        println(">> datasource.username: $username")
+
     }
 	production {
+        dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
         pooled = false
         dbCreate = 'create-drop'
         jndiName = 'java:comp/env/jdbc/petclinic'
+
+        println(">> datasource.jndi: $jndiName")
     }
 }
