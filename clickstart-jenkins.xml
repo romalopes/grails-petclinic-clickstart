@@ -93,7 +93,7 @@
             <properties></properties>
             <forceUpgrade>false</forceUpgrade>
             <nonInteractive>true</nonInteractive>
-            <useWrapper>false</useWrapper>
+            <useWrapper>true</useWrapper>
         </com.g2one.hudson.grails.GrailsBuilder>
     </builders>
     <publishers>
