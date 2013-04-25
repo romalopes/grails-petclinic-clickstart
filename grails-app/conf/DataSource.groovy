@@ -30,36 +30,40 @@ environments {
 		}
 	}
     embeddedDataSource {
-        pooled = true
-        dbCreate = 'create-drop'
-        url = "jdbc:" + System.getProperty('DATABASE_URL_GRAILS_PETCLINIC')
-        driverClassName = "com.mysql.jdbc.Driver"
-        dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
-        username = System.getProperty('DATABASE_USERNAME_GRAILS_PETCLINIC')
-        password = System.getProperty('DATABASE_PASSWORD_GRAILS_PETCLINIC')
-        properties {
-            maxActive = 20
-            maxIdle = 1
-            maxWait = 10000
+        dataSource {
+            pooled = true
+            dbCreate = 'create-drop'
+            url = "jdbc:" + System.getProperty('DATABASE_URL_GRAILS_PETCLINIC')
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
+            username = System.getProperty('DATABASE_USERNAME_GRAILS_PETCLINIC')
+            password = System.getProperty('DATABASE_PASSWORD_GRAILS_PETCLINIC')
+            properties {
+                maxActive = 20
+                maxIdle = 1
+                maxWait = 10000
 
-            removeAbandoned = true
-            removeAbandonedTimeout = 60
-            logAbandoned = true
+                removeAbandoned = true
+                removeAbandonedTimeout = 60
+                logAbandoned = true
 
-            validationQuery = "SELECT 1"
-            testOnBorrow = true
+                validationQuery = "SELECT 1"
+                testOnBorrow = true
+            }
+
+            println(">> datasource.url: $url")
+            println(">> datasource.username: $username")
         }
-
-        println(">> datasource.url: $url")
-        println(">> datasource.username: $username")
-
     }
 	production {
-        dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
-        pooled = false
-        dbCreate = 'create-drop'
-        jndiName = 'java:comp/env/jdbc/petclinic'
+        dataSource {
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
+            pooled = false
+            dbCreate = 'create-drop'
+            jndiName = 'java:comp/env/jdbc/petclinic'
 
-        println(">> datasource.jndi: $jndiName")
+            println(">> datasource.jndi: $jndiName")
+        }
     }
 }
