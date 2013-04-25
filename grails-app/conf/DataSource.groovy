@@ -50,9 +50,6 @@ environments {
                 validationQuery = "SELECT 1"
                 testOnBorrow = true
             }
-
-            println(">> datasource.url: $url")
-            println(">> datasource.username: $username")
         }
     }
 	production {
@@ -62,8 +59,6 @@ environments {
             pooled = false
             dbCreate = 'create-drop'
             jndiName = 'java:comp/env/jdbc/grails_petclinic'
-
-            println(">> datasource.jndi: $jndiName")
         }
     }
 }
