@@ -61,7 +61,7 @@ environments {
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
             pooled = false
             dbCreate = 'create-drop'
-            jndiName = 'java:comp/env/jdbc/petclinic'
+            jndiName = 'java:comp/env/jdbc/grails_petclinic'
 
             println(">> datasource.jndi: $jndiName")
         }
