@@ -5,7 +5,7 @@
     "description": "Deploy the Grails PetClinic sample application binded to MySQL",
     "doc-url": "https://github.com/CloudBees-community/grails-petclinic-clickstart/blob/master/README.md",
     "app-package": "http://repository-community.forge.cloudbees.com/snapshot/localdomain/localhost/grails-petclinic-clickstart/1.0-SNAPSHOT/grails-petclinic-clickstart-1.0-20130412.170139-1.war",
-    "icon": "https://raw.github.com/CloudBees-community//grails-petclinic-clickstart/master/clickstart-icon.png",
+    "icon": "https://raw.github.com/CloudBees-community/grails-petclinic-clickstart/master/clickstart-icon.png",
 
     "supported-by": "cloudbees",
     "order": 1,
