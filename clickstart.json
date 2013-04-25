@@ -2,7 +2,7 @@
     "id": "grails-petclinic-clickstart",
     "name": "Grails PetClinic",
     "source": "git://github.com/CloudBees-community/grails-petclinic-clickstart.git",
-    "description": "Grails PetClinic Clickstart",
+    "description": "Deploy the Grails PetClinic sample application binded to MySQL",
     "doc-url": "https://github.com/CloudBees-community/grails-petclinic-clickstart/blob/master/README.md",
     "app-package": "http://repository-community.forge.cloudbees.com/snapshot/localdomain/localhost/grails-petclinic-clickstart/1.0-SNAPSHOT/grails-petclinic-clickstart-1.0-20130412.170139-1.war",
     "icon": "https://raw.github.com/CloudBees-community//grails-petclinic-clickstart/master/clickstart-icon.png",
@@ -14,7 +14,7 @@
     "runtime": {
         "type": "tomcat",
         "app-parameters" : {
-            "runtime.java_version": "1.7"
+            "jvmPermSize": "256"
         },
         "app-variables": {
             "grails.env": "production"
@@ -29,7 +29,9 @@
     "build-with-jenkins": {
         "plugins" : ["git", "grails"],
         "template": {
-            "type": "https://raw.github.com/CloudBees-Community/grails_template/master/config.xml"
+            "type": "https://raw.github.com/CloudBees-community/grails-petclinic-clickstart/master/jenkins.xml",
+            "options": {
+            }
         }
     }
 }
