@@ -54,7 +54,6 @@ environments {
     }
 	production {
         dataSource {
-            driverClassName = "com.mysql.jdbc.Driver"
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
             pooled = false
             dbCreate = 'create-drop'
