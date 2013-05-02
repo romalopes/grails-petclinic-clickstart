@@ -8,7 +8,7 @@
     "icon": "https://raw.github.com/CloudBees-community/grails-petclinic-clickstart/master/clickstart-icon.png",
 
     "supported-by": "cloudbees",
-    "order": 1,
+    "order": 4,
 
 
     "runtime": {
