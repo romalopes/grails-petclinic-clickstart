@@ -20,7 +20,7 @@ Instructions for a manual setup with the [CloudBees SDK](http://wiki.cloudbees.c
 bees app:create -a community/grails-petclinic-clickstart jvmPermSize=128
 ```
 
-Please not the extra `jvmPermSize` for Grails framrwork.
+Please note the extra `jvmPermSize` for Grails framework.
 
 
 ## Create a MySQL Database
