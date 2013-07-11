@@ -32,7 +32,7 @@ environments {
     embeddedDataSource {
         dataSource {
             pooled = true
-            dbCreate = 'create-drop'
+            dbCreate = 'update'
             url = "jdbc:" + System.getProperty('DATABASE_URL_GRAILS_PETCLINIC')
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
@@ -56,7 +56,7 @@ environments {
         dataSource {
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
             pooled = false
-            dbCreate = 'create-drop'
+            dbCreate = 'update'
             jndiName = 'java:comp/env/jdbc/grails_petclinic'
         }
     }
